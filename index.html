@@ -1,41 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <title>Firebase Test</title>
-</head>
-<body>
-  <h1>Firebase Firestore Bağlantı Testi</h1>
-  <button id="btn">Veritabanına Veri Gönder</button>
-
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIdaSyAf2EX-aA-Q58oKnFlmyKFpbY6GCW5UvMk",
-      authDomain: "kirhukukislemler.firebaseapp.com",
-      projectId: "kirhukukislemler",
-      storageBucket: "kirhukukislemler.firebasestorage.app",
-      messagingSenderId: "669057048177",
-      appId: "1:669057048177:web:77dd0c1177c1202bdd05d0",
-      measurementId: "G-CXX5LMSSYW"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    document.getElementById("btn").addEventListener("click", async () => {
-      try {
-        const docRef = await addDoc(collection(db, "test_koleksiyonu"), {
-          mesaj: "GitHub uzerinden Firebase testi basarili!",
-          tarih: new Date()
-        });
-        alert("Veri basariyla eklendi! ID: " + docRef.id);
-      } catch (e) {
-        alert("Hata olustu: " + e.message);
-      }
-    });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIR HUKUK | Hukuk & Danışmanlık Bürosu</title>
+    <meta name="description" content="KIR HUKUK - Dava, Müvekkil, İş ve Duruşma Takip Sistemi" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#070F26] text-slate-100 antialiased selection:bg-sky-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
+
